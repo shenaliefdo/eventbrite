@@ -3,7 +3,9 @@
 <ul>
     <%@events.each do |event|%>
         <li>
-        <%=event%>
+        <%=event.name%>
+        in <%=event.location%>
+        costs <%=number_to_currency(event.price)%>
         </li>
     <%end%>
 </ul>
