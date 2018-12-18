@@ -2,10 +2,23 @@
 
 <ul>
     <%@events.each do |event|%>
-        <li>
-        <%=event.name%>
-        in <%=event.location%>
-        costs <%=number_to_currency(event.price)%>
-        </li>
+        <article>
+        <header>
+        <h2><%=event.name%></h2>
+        </header>
+        <p><%=event.description%></p>
+        <table>
+        <tr>
+        <th>When:</th>
+        <td><%=event.start_at%></td>
+        </tr>
+        <th>Where:</th>
+        <td><%=event.location%></td>
+        </tr>
+        <th>Price:</th>
+        <td><%=number_to_currency(event.price)%></td>
+        </tr>
+        </table>
+        </article>
     <%end%>
 </ul>
